@@ -81,16 +81,16 @@ The flake automatically handles system-specific configurations, installs all dep
 
 ### 🔧 Technical Stack
 
-| Category            | Tools                                     |
-| ------------------- | ----------------------------------------- |
-| **Package Manager** | Nix with Flakes + Home Manager            |
-| **Shells**          | Fish, Nushell, Zsh with Starship prompt   |
-| **Terminals**       | Ghostty, WezTerm, Tmux, Zellij (optional) |
-| **Editor**          | Neovim (LazyVim) + Zed                    |
-| **Languages**       | Node.js, Rust, Go, with Volta management  |
+| Category            | Tools                                                    |
+| ------------------- | -------------------------------------------------------- |
+| **Package Manager** | Nix with Flakes + Home Manager                           |
+| **Shells**          | Fish, Nushell, Zsh with Starship prompt                  |
+| **Terminals**       | Ghostty, WezTerm, Tmux, Zellij (optional)                |
+| **Editor**          | Neovim (LazyVim) + Zed                                   |
+| **Languages**       | Node.js, Rust, Go, with Volta management                 |
 | **AI Tools**        | Claude Code, OpenCode, Gemini (opt.), multiple providers |
-| **Navigation**      | Television, Yazi, Oil.nvim, Zoxide        |
-| **Development**     | Git, GitHub CLI, Lazy Git                 |
+| **Navigation**      | Television, Yazi, Oil.nvim, Zoxide                       |
+| **Development**     | Git, GitHub CLI, Lazy Git                                |
 
 ### 📁 Project Structure
 
@@ -134,11 +134,11 @@ The flake automatically handles system-specific configurations, installs all dep
 
 The following modules are **macOS-only** and will fail on Linux:
 
-| Module | Description | Why macOS-only |
-|--------|-------------|----------------|
-| `yabai.nix` | Tiling window manager | Uses macOS Accessibility API |
-| `skhd.nix` | Hotkey daemon | Depends on macOS input system |
-| `simple-bar.nix` | Status bar widget | Requires Übersicht (macOS app) |
+| Module           | Description           | Why macOS-only                 |
+| ---------------- | --------------------- | ------------------------------ |
+| `yabai.nix`      | Tiling window manager | Uses macOS Accessibility API   |
+| `skhd.nix`       | Hotkey daemon         | Depends on macOS input system  |
+| `simple-bar.nix` | Status bar widget     | Requires Übersicht (macOS app) |
 
 ### How to Disable macOS Modules
 
@@ -173,11 +173,11 @@ Also remove the macOS window manager packages from `home.packages` (around line 
 ```nix
 home.packages = with pkgs; [
   # ...
-  
+
   # ─── Window management (macOS) ───
   # yabai   # ← Comment this line
   # skhd    # ← Comment this line
-  
+
   # ...
 ];
 ```
@@ -189,7 +189,7 @@ home.packages = with pkgs; [
 ```nix
 # ─── User Configuration ───
 # Change this to your Linux username
-username = "YourUser";  # ← Replace with your username
+username = "dadiaz";  # ← Replace with your username
 ```
 
 **2. Change home directory path** (around line 67):
@@ -219,11 +219,11 @@ homeConfigurations = {
   # macOS system configurations
   "gentleman-macos-intel" = mkHomeConfiguration "x86_64-darwin";
   "gentleman-macos-arm" = mkHomeConfiguration "aarch64-darwin";
-  
+
   # Linux system configurations (add these)
   "gentleman-linux" = mkHomeConfiguration "x86_64-linux";
   "gentleman-linux-arm" = mkHomeConfiguration "aarch64-linux";
-  
+
   # Default to Apple Silicon
   "gentleman" = mkHomeConfiguration "aarch64-darwin";
 };
@@ -238,6 +238,7 @@ home-manager switch --flake .#gentleman-linux
 ### Linux Alternatives
 
 For window management on Linux, consider:
+
 - **i3/Sway** - Popular tiling window managers
 - **Hyprland** - Modern Wayland compositor
 - **bspwm** - Scriptable tiling window manager
@@ -285,7 +286,7 @@ You only need to update the `username` variable at the top of `flake.nix` (aroun
 ```nix
 # ─── User Configuration ───
 # Change this to your macOS username
-username = "YourUser";  # ← Replace with your username
+username = "dadiaz";  # ← Replace with your username
 ```
 
 This single variable is used for both `home.username` and `home.homeDirectory`, so you only need to change it in one place.
@@ -349,11 +350,13 @@ home-manager switch --flake .#gentleman
 **Alternative: Specific system configurations:**
 
 - **Apple Silicon Macs (M1/M2/M3/M4)**:
+
   ```bash
   home-manager switch --flake .#gentleman-macos-arm
   ```
 
 - **Intel Macs**:
+
   ```bash
   home-manager switch --flake .#gentleman-macos-intel
   ```
@@ -506,14 +509,15 @@ home-manager switch --flake .#gentleman
 Some configurations are commented out by default. To enable them:
 
 1. **Zellij Terminal Workspace:**
+
    ```bash
    # Edit flake.nix and uncomment the Zellij line
    sed -i '' 's|# ./zellij.nix|./zellij.nix|' flake.nix
-   
+
    # Re-run the installation
    nix run github:nix-community/home-manager -- switch --flake .#gentleman-macos-arm -b backup
    ```
-   
+
    Features:
    - Modern terminal multiplexer alternative to tmux
    - Vim-like keybindings with custom themes
@@ -524,47 +528,51 @@ Some configurations are commented out by default. To enable them:
    After enabling Zellij, you need to update shell configurations to use Zellij instead of tmux:
 
    **Fish Shell (`~/.config/fish/config.fish`):**
+
    ```fish
    # Change line ~31 from:
    if not set -q TMUX; and not set -q ZED_TERMINAL
        tmux
-   
+
    # To:
    if not set -q ZELLIJ; and not set -q ZED_TERMINAL
        zellij
    ```
 
    **Zsh Shell (`~/.zshrc`):**
+
    ```bash
    # Change lines ~100-102 from:
    WM_VAR="/$TMUX"
    WM_CMD="tmux"
-   
+
    # To:
    WM_VAR="/$ZELLIJ"
    WM_CMD="zellij"
    ```
 
    **Nushell (`~/.config/nushell/config.nu`):**
+
    ```nu
    # Change lines ~1015-1016 from:
    let MULTIPLEXER = "tmux"
    let MULTIPLEXER_ENV_PREFIX = "TMUX"
-   
+
    # To:
    let MULTIPLEXER = "zellij"
    let MULTIPLEXER_ENV_PREFIX = "ZELLIJ"
    ```
 
 2. **Gemini CLI Integration:**
+
    ```bash
    # Edit flake.nix and add Gemini module
    # Add './gemini.nix' to the modules list in flake.nix
-   
+
    # Re-run the installation
    nix run github:nix-community/home-manager -- switch --flake .#gentleman-macos-arm -b backup
    ```
-   
+
    Features:
    - Google's AI assistant CLI tool
    - Integrated via Bun package manager
@@ -579,7 +587,7 @@ This configuration includes support for the following AI tools:
 - **CopilotChat.nvim** - GitHub Copilot chat interface
 - **OpenCode.nvim** - OpenCode AI integration
 - **CodeCompanion.nvim** - Multi-AI provider support
-- **Claude Code.nvim** - Claude AI integration *(enabled by default)*
+- **Claude Code.nvim** - Claude AI integration _(enabled by default)_
 - **Gemini.nvim** - Google Gemini integration
 
 ### How to Switch AI Plugins
@@ -587,11 +595,13 @@ This configuration includes support for the following AI tools:
 **Claude Code is already enabled by default.** To switch to a different AI assistant:
 
 1. **Navigate to the disabled plugins file:**
+
    ```bash
    nvim ~/.config/nvim/lua/plugins/disabled.lua
    ```
 
 2. **Disable Claude Code** by changing `enabled = true` to `enabled = false`:
+
    ```lua
    {
      "greggh/claude-code.nvim",
@@ -651,11 +661,12 @@ To enable it, add this to your `opencode.json`:
 ```
 
 **What this does:**
+
 - Allows OpenCode to authenticate using your Claude Max/Pro subscription
 - No separate API keys needed
 - Full access to Claude Sonnet 4 and other models
 
-> **Stability warning:** This workaround is stable *for now*, but Anthropic could block it at any time. If you need guaranteed long-term stability, use Claude Code CLI instead.
+> **Stability warning:** This workaround is stable _for now_, but Anthropic could block it at any time. If you need guaranteed long-term stability, use Claude Code CLI instead.
 
 **Location:** `~/.config/opencode/opencode.json`
 

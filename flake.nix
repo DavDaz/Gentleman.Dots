@@ -18,7 +18,7 @@
       
       # ─── User Configuration ───
       # Change this to your macOS username
-      username = "YourUser";
+      username = "dadiaz";
 
       # Function to create home configuration for a specific system
       mkHomeConfiguration = system:

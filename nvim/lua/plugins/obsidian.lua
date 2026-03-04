@@ -11,15 +11,15 @@ return {
     "nvim-lua/plenary.nvim",
   },
   opts = {
+    legacy_commands = false,
     workspaces = {
       {
-        name = "GentlemanNotes", -- Name of the workspace
-        path = os.getenv("HOME") .. "/.config/obsidian", -- Path to the notes directory
+        name = "davdaz-notes",
+        path = os.getenv("HOME") .. "/.config/davdaz-notes",
       },
     },
-    completition = {
-      cmp = true,
-    },
+    new_notes_location = "notes_subdir",
+    notes_subdir = "00-Inbox",
     picker = {
       -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', 'mini.pick' or 'snacks.pick'.
       name = "snacks.pick",
@@ -45,10 +45,9 @@ return {
 
     -- Settings for templates
     templates = {
-      subdir = "templates", -- Subdirectory for templates
-      date_format = "%Y-%m-%d-%a", -- Date format for templates
-      gtime_format = "%H:%M", -- Time format for templates
-      tags = "", -- Default tags for templates
+      folder = "99-Templates",
+      date_format = "YYYY-MM-DD-ddd",
+      time_format = "HH:mm",
     },
   },
 }
