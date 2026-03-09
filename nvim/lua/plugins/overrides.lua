@@ -49,7 +49,25 @@ return {
             },
           },
         },
+        dartls = {
+          -- Configuration for Dart Language Server (included with Flutter SDK)
+          -- Requires Flutter SDK installed: https://docs.flutter.dev/get-started/install
+          mason = false, -- dartls comes with the Flutter SDK, not managed by mason
+        },
       },
     },
+  },
+
+  -- Add Dart Treesitter parser
+  {
+    -- Plugin: nvim-treesitter
+    -- Description: Adds Dart parser so Neovim understands Dart/Flutter AST for
+    -- accurate syntax highlighting, text objects, and indentation.
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, { "dart" })
+      end
+    end,
   },
 }
