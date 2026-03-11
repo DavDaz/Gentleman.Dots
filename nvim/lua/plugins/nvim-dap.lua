@@ -168,17 +168,6 @@ return {
         )
       end
 
-      -- Setup DAP configuration using VsCode launch.json file
-      local vscode = require("dap.ext.vscode")
-      local json = require("plenary.json")
-      vscode.json_decode = function(str)
-        return vim.json.decode(json.json_strip_comments(str))
-      end
-
-      -- Load launch configurations from .vscode/launch.json if it exists
-      if vim.fn.filereadable(".vscode/launch.json") then
-        vscode.load_launchjs()
-      end
 
       -- Function to load environment variables
       local function load_env_variables()
