@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["opencode-anthropic-auth@latest", "opencode-gemini-auth@latest"],
+  "plugin": ["opencode-anthropic-auth@latest"],
   "autoupdate": true,
   "permission": {
     "bash": {
@@ -38,11 +38,6 @@
       "url": "https://mcp.notion.com/mcp",
       "enabled": true,
       "timeout": 5000
-    },
-    "jira": {
-      "type": "remote",
-      "url": "https://mcp.atlassian.com/v1/mcp",
-      "enabled": true
     }
   },
   "agent": {
