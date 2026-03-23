@@ -17,7 +17,7 @@
       }
     }
   },
-  "plugin": ["opencode-anthropic-auth@latest"],
+  "plugin": ["opencode-claude-auth"],
   "autoupdate": true,
   "permission": {
     "bash": {

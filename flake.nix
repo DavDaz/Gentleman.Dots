@@ -56,6 +56,7 @@
             ./oil-scripts.nix  # Oil.nvim scripts configuration
             ./opencode.nix  # OpenCode AI assistant configuration
             ./claude.nix  # Claude Code CLI configuration
+            ./gemini.nix  # Gemini CLI configuration
             ./yabai.nix  # Yabai window manager configuration
             ./skhd.nix  # Skhd hotkey daemon configuration
             # ./simple-bar.nix  # simple-bar for Übersicht (disabled - using sketchybar)
