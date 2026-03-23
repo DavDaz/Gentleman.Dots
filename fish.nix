@@ -76,6 +76,11 @@
       alias fzfnvim='nvim (fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
       alias opencode-config='nvim ~/.opencode.json'
 
+      # AeroSpace: mover ventana al monitor y seguir el foco
+      alias p1='aerospace move-node-to-monitor 1 && aerospace focus-monitor 1'
+      alias p2='aerospace move-node-to-monitor 2 && aerospace focus-monitor 2'
+      alias p3='aerospace move-node-to-monitor 3 && aerospace focus-monitor 3'
+
       ##  yazi
 
       function ya_zed

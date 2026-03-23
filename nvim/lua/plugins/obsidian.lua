@@ -14,10 +14,11 @@ return {
     legacy_commands = false,
     workspaces = {
       {
-        name = "GentlemanNotes", -- Name of the workspace
-        path = os.getenv("HOME") .. "/.config/obsidian", -- Path to the notes directory
+        name = "davdaz-notes",
+        path = os.getenv("HOME") .. "/.config/davdaz-notes",
       },
     },
+    notes_subdir = "00-Inbox",
     completion = {
       cmp = true,
     },

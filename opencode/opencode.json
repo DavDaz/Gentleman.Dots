@@ -1,5 +1,22 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "gpt-oss:20b": {
+          "name": "gpt-oss-20b-custom:latest"
+        },
+        "qwen3-coder-custom": {
+          "name": "qwen3-coder-custom:latest"
+        }
+      }
+    }
+  },
   "plugin": ["opencode-anthropic-auth@latest"],
   "autoupdate": true,
   "permission": {
@@ -38,6 +55,15 @@
       "url": "https://mcp.notion.com/mcp",
       "enabled": true,
       "timeout": 5000
+    },
+    "pencil": {
+      "type": "local",
+      "command": [
+        "/Applications/Pencil.app/Contents/Resources/app.asar.unpacked/out/mcp-server-darwin-arm64",
+        "--app",
+        "desktop"
+      ],
+      "enabled": true
     }
   },
   "agent": {
