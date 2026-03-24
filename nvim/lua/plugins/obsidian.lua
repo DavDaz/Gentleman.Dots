@@ -18,6 +18,7 @@ return {
         path = os.getenv("HOME") .. "/.config/davdaz-notes",
       },
     },
+    new_notes_location = "notes_subdir",
     notes_subdir = "00-Inbox",
     completion = {
       cmp = true,

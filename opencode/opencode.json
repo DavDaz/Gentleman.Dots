@@ -13,6 +13,9 @@
         },
         "qwen3-coder-custom": {
           "name": "qwen3-coder-custom:latest"
+        },
+        "glm-coding": {
+          "name": "glm-coding:latest"
         }
       }
     }
