@@ -20,7 +20,7 @@
       }
     }
   },
-  "plugin": ["opencode-claude-auth"],
+  "plugin": ["opencode-anthropic-login-via-cli@latest"],
   "autoupdate": true,
   "permission": {
     "bash": {
