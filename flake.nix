@@ -102,7 +102,7 @@
                 # ─── Compilers and system utilities ───
                 gcc
                 fd
-                ripgrep
+                unstablePkgs.ripgrep
                 coreutils
                 unzip
                 bat
