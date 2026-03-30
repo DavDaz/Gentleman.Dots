@@ -48,6 +48,7 @@ set -g default-terminal "tmux-256color"
 set -ga terminal-overrides ",*:Tc"
 
 set -s extended-keys on
+set -g extended-keys-format csi-u
 
 # Modo vim
 set -g mode-keys vi
