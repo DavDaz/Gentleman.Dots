@@ -33,7 +33,7 @@
 
       # All PATH entries - matching zsh config
       # Priority: local bins > nix > cargo > volta > bun > homebrew > system
-      set -gx PATH $HOME/develop/flutter/bin $HOME/.local/bin $HOME/.opencode/bin $HOME/.local/state/nix/profiles/home-manager/home-path/bin $HOME/.nix-profile/bin /nix/var/nix/profiles/default/bin $HOME/.cargo/bin $HOME/.volta/bin $HOME/.bun/bin $PATH
+      set -gx PATH $HOME/develop/flutter/bin $HOME/.local/bin $HOME/.opencode/bin $HOME/.local/state/nix/profiles/home-manager/home-path/bin $HOME/.nix-profile/bin /nix/var/nix/profiles/default/bin $HOME/.cargo/bin $HOME/.volta/bin $HOME/.bun/bin $HOME/.npm-global/bin $PATH
 
       set -gx GPG_TTY (tty)
 
