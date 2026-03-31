@@ -8,14 +8,20 @@
         "baseURL": "http://localhost:11434/v1"
       },
       "models": {
-        "gpt-oss:20b": {
+        "gpt-oss:20b-custom": {
           "name": "gpt-oss-20b-custom:latest"
         },
-        "qwen3-coder-custom": {
-          "name": "qwen3-coder-custom:latest"
+        "qwen35-coder-custom": {
+          "name": "qwen35-coder:latest"
         },
-        "glm-coding": {
-          "name": "glm-coding:latest"
+        "qwen35-coder": {
+          "name": "qwen3.5:35b-a3b-coding-nvfp4"
+        },
+        "glm-fash-coding": {
+          "name": "glm-4.7-flash:latest"
+        },
+        "qwen3.5:35b-a3b": {
+          "name": "qwen3.5:35b-a3b"
         }
       }
     }
