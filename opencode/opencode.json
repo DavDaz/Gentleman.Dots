@@ -55,7 +55,7 @@
       "enabled": true
     },
     "engram": {
-      "command": ["engram", "mcp"],
+      "command": ["engram", "mcp", "--tools=agent"],
       "enabled": true,
       "type": "local"
     },
