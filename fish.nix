@@ -33,7 +33,7 @@
 
       # All PATH entries - matching zsh config
       # Priority: local bins > nix > cargo > volta > bun > homebrew > system
-      set -gx PATH $HOME/.local/bin $HOME/.opencode/bin $HOME/.local/state/nix/profiles/home-manager/home-path/bin $HOME/.nix-profile/bin /nix/var/nix/profiles/default/bin $HOME/.cargo/bin $HOME/.volta/bin $HOME/.bun/bin $PATH
+      set -gx PATH $HOME/develop/flutter/bin $HOME/.local/bin $HOME/.opencode/bin $HOME/.local/state/nix/profiles/home-manager/home-path/bin $HOME/.nix-profile/bin /nix/var/nix/profiles/default/bin $HOME/.cargo/bin $HOME/.volta/bin $HOME/.bun/bin $HOME/.npm-global/bin $PATH
 
       set -gx GPG_TTY (tty)
 
@@ -75,6 +75,11 @@
       alias fzfbat='fzf --preview="bat --theme=gruvbox-dark --color=always {}"'
       alias fzfnvim='nvim (fzf --preview="bat --theme=gruvbox-dark --color=always {}")'
       alias opencode-config='nvim ~/.opencode.json'
+
+      # AeroSpace: mover ventana al monitor y seguir el foco
+      alias p1='aerospace move-node-to-monitor 1 && aerospace focus-monitor 1'
+      alias p2='aerospace move-node-to-monitor 2 && aerospace focus-monitor 2'
+      alias p3='aerospace move-node-to-monitor 3 && aerospace focus-monitor 3'
 
       ##  yazi
 

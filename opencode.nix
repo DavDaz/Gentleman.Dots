@@ -72,7 +72,7 @@
       fi
 
       # Install GitHub Copilot extension if not present
-      if ! gh extension list | grep -q "github/gh-copilot"; then
+      if ! gh copilot --help >/dev/null 2>&1; then
         echo "📦 Installing GitHub Copilot extension..."
         gh extension install github/gh-copilot
         echo "✅ GitHub Copilot extension installed!"
@@ -143,7 +143,7 @@
     fi
 
     # Install GitHub Copilot extension if not present
-    if ! gh extension list | grep -q "github/gh-copilot"; then
+    if ! gh copilot --help >/dev/null 2>&1; then
       echo "📦 Installing GitHub Copilot extension..."
       gh extension install github/gh-copilot
       echo "✅ GitHub Copilot extension installed!"

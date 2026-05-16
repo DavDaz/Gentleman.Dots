@@ -190,6 +190,16 @@ alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
+alt-shift-n = 'move-node-to-monitor --focus-follows-window --wrap-around next'
+alt-shift-m = 'move-node-to-monitor --focus-follows-window --wrap-around prev'
+
+# Mover ventana a monitor específico
+ctrl-alt-1 = 'move-node-to-monitor --focus-follows-window 1'
+ctrl-alt-2 = 'move-node-to-monitor --focus-follows-window 2'
+ctrl-alt-3 = 'move-node-to-monitor --focus-follows-window 3'
+
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
@@ -222,8 +232,8 @@ work = "main"
 development = "main"
 others = "main"
 stream = "main"
-6 = "Elgato Prom."
-7 = "ARZOPA"
+6 = "E24-20 (1)"
+7 = "E24-20 (2)"
 
 [[on-window-detected]]
 if.app-id = "com.apple.finder"

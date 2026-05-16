@@ -49,6 +49,8 @@ return {
             },
           },
         },
+        -- dartls: manejado por flutter-tools.nvim (ver flutter.lua)
+        -- No configurar acá para evitar conflictos con flutter-tools LSP
       },
     },
   },

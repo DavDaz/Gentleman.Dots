@@ -18,7 +18,7 @@
       
       # ─── User Configuration ───
       # Change this to your macOS username
-      username = "YourUser";
+      username = "dadiaz";
 
       # Function to create home configuration for a specific system
       mkHomeConfiguration = system:
@@ -56,6 +56,7 @@
             ./oil-scripts.nix  # Oil.nvim scripts configuration
             ./opencode.nix  # OpenCode AI assistant configuration
             ./claude.nix  # Claude Code CLI configuration
+            ./gemini.nix  # Gemini CLI configuration
             ./yabai.nix  # Yabai window manager configuration
             ./skhd.nix  # Skhd hotkey daemon configuration
             # ./simple-bar.nix  # simple-bar for Übersicht (disabled - using sketchybar)
@@ -101,7 +102,7 @@
                 # ─── Compilers and system utilities ───
                 gcc
                 fd
-                ripgrep
+                unstablePkgs.ripgrep
                 coreutils
                 unzip
                 bat
